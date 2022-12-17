@@ -31,7 +31,7 @@ UPLOAD_FOLDER = 'data/'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route("/")
+@app.route("https://81e1-116-103-20-11.ap.ngrok.io/")
 def hello():
 	return "Hello World!"
 
@@ -39,7 +39,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('81e1-116-103-20-11.ap.ngrok.io/upload', methods=['GET', 'POST'])
+@app.route('https://81e1-116-103-20-11.ap.ngrok.io/upload', methods=['GET', 'POST'])
 def upload_file():
 	if request.method == 'POST':
 		print("request data", request.data)
